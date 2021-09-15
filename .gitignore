@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# Rmd output
+*.html
+*_files/
+*_cache/
+_site/

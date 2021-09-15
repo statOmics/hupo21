@@ -9,8 +9,10 @@ navbar:
     - text: "Lectures"
       icon: fa-chalkboard-teacher
       menu:
-      - text: Sources of Variability
+      - text: "Sources of Variability"
         href: sourcesOfVariability.html
+      - text: "Experimental Design"
+        href: experimentalDesign.html
   right:
     - icon: fab fa-github      
       href: https://github.com/statOmics/hupo21

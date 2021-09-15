@@ -1,4 +1,4 @@
-#  session on Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 on HUPO 2021 (hupo21)
+#  Session on Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 on HUPO 2021 (hupo21)
 
 [![Render and Deploy](https://github.com/statOmics/hupo21/workflows/Render%20and%20Deploy/badge.svg)](https://github.com/statOmics/hupo21/actions)
 
