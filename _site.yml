@@ -1,0 +1,33 @@
+name : "hupo21"
+title : "Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics: A Tutorial with msqrob2 (hupo21)"
+navbar:
+  title: "hupo21"
+  type: inverse
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: "Lectures"
+      icon: fa-chalkboard-teacher
+      menu:
+      - text: Sources of Variability
+        href: sourcesOfVariability.html
+  right:
+    - icon: fab fa-github      
+      href: https://github.com/statOmics/hupo21
+    - text: "statOmics"
+      href: http://statomics.github.io/
+output:
+  html_document:
+    code_download: true
+    theme: cosmo
+    toc: true
+    toc_float: true
+    highlight: tango
+    number_sections: true
+    df_print: paged
+    new_session: true
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+
+exclude: ["install.R"]
