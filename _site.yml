@@ -13,6 +13,8 @@ navbar:
         href: sourcesOfVariability.html
       - text: "Experimental Design"
         href: experimentalDesign.html
+      - text: "msqrob2 tutorial"
+        href: msqrob2guiTutorial.html
   right:
     - icon: fab fa-github      
       href: https://github.com/statOmics/hupo21
