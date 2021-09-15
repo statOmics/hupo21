@@ -12,7 +12,7 @@
 <meta name="author" content="Lieven Clement" />
 
 
-<title>2. Software for Proteomics Data Analysis 2021 (PDA21)</title>
+<title>Tutorial on msqrob2 with the GUI</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -280,7 +280,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">2. Software for Proteomics Data Analysis 2021 (PDA21)</h1>
+<h1 class="title toc-ignore">Tutorial on msqrob2 with the GUI</h1>
 <h4 class="author">Lieven Clement</h4>
 <h4 class="date"><a href="https://statomics.github.io">statOmics</a>, Ghent University</h4>
 
@@ -288,29 +288,27 @@ $(document).ready(function () {
 
 
 <p><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+<p>This is part of the online course <a href="https://statomics.github.io/hupo21/">Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 (hupo21)</a></p>
+<div id="heart-dataset" class="section level3">
+<h3>Heart dataset</h3>
+<p><img src="figures/heart.png" width="50%" /></p>
+<p>Researchers have assessed the proteome in different regions of the heart for 3 patients (identifiers 3, 4, and 8). For each patient they sampled the left atrium (LA), right atrium (RA), left ventricle (LV) and the right ventricle (RV). The data are a small subset of the public dataset <a href="https://www.ebi.ac.uk/pride/archive/projects/PXD006675">PXD006675</a> on PRIDE.</p>
+<p>Suppose that researchers are mainly interested in comparing the ventricular to the atrial proteome. Particularly, they would like to compare</p>
 <ul>
-<li>Install [R version 4.1 or higher] (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>)</li>
-<li>Install <a href="https://www.rstudio.com/products/rstudio/download/">Rstudio</a></li>
-<li>Install <em>msqrob2</em>, start R and run the following command.</li>
+<li>the left atrium to the left ventricle</li>
+<li>the right atrium to the right ventricle</li>
+<li>the average ventricular vs atrial proteome</li>
+<li>if ventricular vs atrial proteome shifts differ between left and right heart region.</li>
 </ul>
-<pre><code>if(!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE)) {
- install.packages(&quot;BiocManager&quot;)
-}
-BiocManager::install(&quot;msqrob2&quot;)</code></pre>
+</div>
+<div id="additional-resources" class="section level3">
+<h3>Additional resources</h3>
 <ul>
-<li>Participants who want to use the graphical user interface (GUI) can install the msqrob2gui shiny app, start R and run the following commands</li>
+<li><a href="./software.html">Install msqrob2 software</a></li>
+<li><a href="https://github.com/statOmics/hupo21/archive/refs/heads/data.zip">Download data</a></li>
+<li><a href="https://statomics.github.io/PDA21/cptac_robust_gui.html">Introduction to msqrob2gui</a></li>
 </ul>
-<pre><code>if(!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE)) {
- install.packages(&quot;BiocManager&quot;)
-}
-BiocManager::install(&quot;statomics/msqrob2gui&quot;)</code></pre>
-<ul>
-<li>check if your installation is working with the following example library(msqrob2)</li>
-</ul>
-<pre><code>data(pe)
-pe &lt;- aggregateFeatures(pe,i=&quot;peptide&quot;,fcol=&quot;Proteins&quot;,name=&quot;protein&quot;)
-pe &lt;- msqrob(pe,i=&quot;protein&quot;,formula=~condition,modelColumnName=&quot;rlm&quot;)
-getCoef(rowData(pe[[&quot;protein&quot;]])$rlm[[1]])</code></pre>
+</div>
 
 
 
