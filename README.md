@@ -1,15 +1,11 @@
-#  Proteomics Data Analysis 2021 - PDA21
+#  session on Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 on HUPO 2021 (hupo21)
 
-[![Render and Deploy](https://github.com/statOmics/PDA21/workflows/Render%20and%20Deploy/badge.svg)](https://github.com/statOmics/PDA21/actions)
+[![Render and Deploy](https://github.com/statOmics/hupo21/workflows/Render%20and%20Deploy/badge.svg)](https://github.com/statOmics/hupo21/actions)
 
-Course site for Proteomics Data Analysis 2021 (PDA 2021)
+Course site for session on Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 on HUPO 2021 (hupo21)
 
-https://statomics.github.io/PDA21/
+https://statomics.github.io/hupo21/
 
-
-### Issues
-
-If you encounter any problems related to the course material (e.g. package installation problems, bugs in the code, typos, ...), please consider [posting an issue on GitHub](https://github.com/statOmics/PDA21/issues).
 
 
 
