@@ -225,12 +225,45 @@ E[Y|PD] &=& \beta_0 + \beta_{PD}\\
 
 ## Statistical Inference
 
+### Hypotheses
+
 We want to find proteins that are differential abundant
 
 $\rightarrow$ use a statistical test 
 
-- $H_0$: $\log_2 FC_{PD-OR} = 0$  or $\beta_{PD} = 0$
+We typically start from the alternative hypothesis
+
 - $H_1$: $\log_2 FC_{PD-OR} \neq 0$  or $\beta_{PD} \neq 0$
+
+But we can not use data to prove a hypothesis, we therefore falsify the opposite:
+
+- $H_0$: $\log_2 FC_{PD-OR} = 0$  or $\beta_{PD} = 0$
+
+### Test statistic: 
+
+- T-test on the model parameter $\beta_{PD}$
+
+
+\[T = \frac{\beta_{PD} - 0}{\text{se}_{\beta_{PD}}}\]
+
+which follows a t-distribution if the errors are 
+\[
+\epsilon_i \text{ i.i.d. } N(0,\sigma^2)
+\]
+
+- p-value: probability to observe a t-statistic that is as extreme or more extreme that the one we observed for this protein in our sample if we would repeat the experiment and if the protein is not differentially abundant.
+
+### Multiple testing 
+
+- We do this test for all proteins (typically thousands of them)
+
+- Adjust p-values for multiple testing using the false discovery rate 
+$$FDR = E\left[\frac{FP}{FP + TP}\right]$$
+
+Note, if you want to refresh basic concepts of testing: 
+
+- [statistical hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#133_Hypothesis_testing:_a_single_protein)
+- [Multiple hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#14_Multiple_hypothesis_testing)
 
 ## Experiment with 3 vs 3 comparison
 
