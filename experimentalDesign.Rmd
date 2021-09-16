@@ -42,7 +42,6 @@ library(gridExtra)
 
 - Sample size 
 - Randomized Complete Block Designs 
-- Experiments with technical repeats
 
 # Sample size 
 

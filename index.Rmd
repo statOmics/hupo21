@@ -62,6 +62,11 @@ Note, that users who develop R/markdown scripts can access data both from the we
 
 ### Detailed Program
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/XfMPORL1eHE"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
   1. Sources of variability in label-free proteomics experiments:  [lecture](./sourcesOfVariability.html), [[PDF](./sourcesOfVariability.pdf)]
   2. Experimental design concepts for proteomics data analysis: 

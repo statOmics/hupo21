@@ -26,6 +26,11 @@ bibliography: msqrob2.bib
 This is part of the online course [Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 (hupo21)](https://statomics.github.io/hupo21/)
 
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/gG7fMgFOxsc"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <details><summary> Click to see libraries that are loaded </summary><p>
 ```{r, warning=FALSE, message=FALSE}
@@ -45,9 +50,14 @@ library(gridExtra)
 2. Sources of variability
 3. Summarization 
 
-The summary . 
 
 ## MS-based workflow
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/13gpel3G22w"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ```{r echo=FALSE}
 knitr::include_graphics("./figures/ProteomicsWorkflow.png")
@@ -68,7 +78,7 @@ $\rightarrow$ Unbalanced pepide identifications across samples and messy data
 ## CPTAC Spike-in Study
 
 <iframe width="560" height="315"
-src="https://www.youtube.com/embed/6V5GiA4Cg2U"
+src="https://www.youtube.com/embed/bOqyHyNwQE4"
 frameborder="0"
 style="display: block; margin: auto;"
 allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -154,6 +164,12 @@ colData(pe)
 # Sources of variation 
 
 ## Intensities of one peptide 
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/dH28QU35BzE"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Peptide AALEELVK from spiked-in UPS protein P12081. 
 We only show data from lab1.
@@ -273,6 +289,12 @@ We keep `r nrow(pe[["peptideLog"]])` peptides upon filtering.
 
 ## Technical Variability
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/ySfm8_9LELg"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 <details><summary> Click to see code for plot </summary><p>
 ```{r}
 densityConditionD <- pe[["peptideLog"]][,colData(pe)$condition=="D"] %>% 
@@ -365,6 +387,11 @@ densityLab2Norm
 
 ## Pseudo replication
 
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/-vp7EBaur7s"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <details><summary> Click to see code to make plot </summary><p>
 ```{r plot = FALSE}

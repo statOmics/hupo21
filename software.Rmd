@@ -25,14 +25,6 @@ if(!requireNamespace("BiocManager", quietly = TRUE)) {
 BiocManager::install("msqrob2")
 ```
 
-- Participants who want to use the graphical user interface (GUI) can install the msqrob2gui shiny app, start R and run the following commands
-
-```
-if(!requireNamespace("BiocManager", quietly = TRUE)) {
- install.packages("BiocManager")
-}
-BiocManager::install("statomics/msqrob2gui")
-```
 
 - check if your installation is working with the following example
 library(msqrob2)
@@ -42,4 +34,22 @@ data(pe)
 pe <- aggregateFeatures(pe,i="peptide",fcol="Proteins",name="protein")
 pe <- msqrob(pe,i="protein",formula=~condition,modelColumnName="rlm")
 getCoef(rowData(pe[["protein"]])$rlm[[1]])
+```
+
+
+
+- Participants who want to use the graphical user interface (GUI) can install the msqrob2gui shiny app, start R and run the following commands
+
+```
+if(!requireNamespace("BiocManager", quietly = TRUE)) {
+ install.packages("BiocManager")
+}
+BiocManager::install("statomics/msqrob2gui")
+```
+
+- Launch the GUI. Run 
+
+```
+library(msqrob2gui)
+launchMsqrob2App()
 ```
