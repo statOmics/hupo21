@@ -260,10 +260,14 @@ which follows a t-distribution if the errors are
 - Adjust p-values for multiple testing using the false discovery rate 
 $$FDR = E\left[\frac{FP}{FP + TP}\right]$$
 
-Note, if you want to refresh basic concepts of testing: 
+- Empirical Bayes variance estimation: Note, that the massive parallel data structure also allows you to stabilize the variance estimation by borrowing information across proteins! 
+
+Note, if you want to refresh basic concepts of hypothesis testing: 
 
 - [statistical hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#133_Hypothesis_testing:_a_single_protein)
 - [Multiple hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#14_Multiple_hypothesis_testing)
+- [Empirical Bayes Variance Estimation](https://statomics.github.io/PDA21/pda_quantification_inference.html#15_Moderated_Statistics)
+
 
 ## Experiment with 3 vs 3 comparison
 
