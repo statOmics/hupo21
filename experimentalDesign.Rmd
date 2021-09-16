@@ -244,9 +244,9 @@ But we can not use data to prove a hypothesis, we therefore falsify the opposite
 - T-test on the model parameter $\beta_{PD}$
 
 
-\[T = \frac{\beta_{PD} - 0}{\text{se}_{\beta_{PD}}}\]
+\[T = \frac{\hat\beta_{PD} - 0}{\text{se}_{\hat\beta_{PD}}}\]
 
-which follows a t-distribution if the errors are 
+which follows a t-distribution under $H_0$ if the errors are 
 \[
 \epsilon_i \text{ i.i.d. } N(0,\sigma^2)
 \]
@@ -262,9 +262,9 @@ $$FDR = E\left[\frac{FP}{FP + TP}\right]$$
 
 - Empirical Bayes variance estimation: Note, that the massive parallel data structure also allows you to stabilize the variance estimation by borrowing information across proteins! 
 
-Note, if you want to refresh basic concepts of hypothesis testing: 
+Note, if you want to refresh some fundamental concepts of hypothesis testing: 
 
-- [statistical hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#133_Hypothesis_testing:_a_single_protein)
+- [Statistical hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#133_Hypothesis_testing:_a_single_protein)
 - [Multiple hypothesis testing](https://statomics.github.io/PDA21/pda_quantification_inference.html#14_Multiple_hypothesis_testing)
 - [Empirical Bayes Variance Estimation](https://statomics.github.io/PDA21/pda_quantification_inference.html#15_Moderated_Statistics)
 
