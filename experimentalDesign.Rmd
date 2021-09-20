@@ -1085,7 +1085,7 @@ pe2 <- hypothesisTest(object = pe2, i = "protein", contrast = L)
 ### Comparison of results
 
 <details><summary> Click to see code </summary><p>
-```{r}
+```{r warning=FALSE,echo=FALSE}
 volcanoRCB <- ggplot(
     rowData(pe[["protein"]])$celltypeTreg,
     aes(x = logFC, y = -log10(pval), color = adjPval < 0.05)
@@ -1110,8 +1110,8 @@ volcanoCRD <- ggplot(
 ```
 </p></details>
   
-```{r}
-grid.arrange(volcanoRCB,volcanoCRD,ncol=2)
+```{r warning=FALSE,echo=FALSE}
+grid.arrange(volcanoRCB,volcanoCRD,nrow=2)
 ```
 
 ### Comparison of standard deviation 
