@@ -26,10 +26,6 @@ Duguet et al. 2017 compared the proteomes of mouse regulatory T cells (Treg) and
 
 Three subsets of the data are avialable:
 
-- peptidesCRD.txt: contains data of Tconv cells for 4 bio-repeats and Treg cells for 4 bio-repeats
-
-- peptidesRCB.txt: contains data for 4 bio-repeats only, but for each bio-repeat the Treg and Tconv proteome is profiled.  
-
 - peptides.txt: contains data of Treg and Tconv cells for 7 bio-repeats
 
 # Additional resources

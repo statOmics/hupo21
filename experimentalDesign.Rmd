@@ -1026,10 +1026,17 @@ mdsCRD
 
 
 - We can isolate the between block variability from the analysis using linear model:
+  
+  - Formula in R
 $$ 
 y \sim \text{celltype} + \text{mouse}
 $$
+  
+  - Formula 
 
+$$
+y_i = \beta_0 + \beta_\text{Treg} x_{i,\text{Treg}} + \beta_{m2}x_{i,m2} + \beta_{m3}x_{i,m3} + \beta_{m4}x_{i,m4}  + \epsilon_i
+$$
 - Possible in msqrob2 and MSstats but not possible with Perseus!
 
 
@@ -1044,13 +1051,6 @@ pe <- msqrob(
   formula = ~ celltype + mouse)
 ```
 
-### RCB wrong analysis
-```{r warning=FALSE}
-pe <- msqrob(
-  object = pe,
-  i = "protein",
-  formula = ~ celltype, modelColumnName = "wrongModel")
-```
 
 ### CRD analysis 
 ```{r warning = FALSE}
@@ -1073,12 +1073,14 @@ Effect size in CRD
 VisualizeDesign(colData(pe2),~ celltype)$plotlist
 ```
 
+
+<details><summary> Click to see code for statistical inference </summary><p>
 ```{r}
 L <- makeContrast("celltypeTreg = 0", parameterNames = c("celltypeTreg"))
 pe <- hypothesisTest(object = pe, i = "protein", contrast = L)
-pe <- hypothesisTest(object = pe, i = "protein", contrast = L, modelColumn = "wrongModel", resultsColumnNamePrefix="wrong")
 pe2 <- hypothesisTest(object = pe2, i = "protein", contrast = L)
 ```
+</p></details>
 
 ### Comparison of results
 
@@ -1095,17 +1097,6 @@ volcanoRCB <- ggplot(
                 sum(rowData(pe[["protein"]])$celltypeTreg$adjPval<0.05,na.rm=TRUE),
             " significant"))
 
-volcanoRCBwrong <- ggplot(
-    rowData(pe[["protein"]])$wrongcelltypeTreg,
-    aes(x = logFC, y = -log10(pval), color = adjPval < 0.05)
-) +
-    geom_point(cex = 2.5) +
-    scale_color_manual(values = alpha(c("black", "red"), 0.5)) +
-    theme_minimal() +
-    ggtitle(paste0("RCB wrong: \n", 
-                sum(rowData(pe[["protein"]])$wrongcelltypeTreg$adjPval<0.05,na.rm=TRUE),
-            " significant"))
-
 volcanoCRD <- ggplot(
     rowData(pe2[["protein"]])$celltypeTreg,
     aes(x = logFC, y = -log10(pval), color = adjPval < 0.05)
@@ -1120,7 +1111,7 @@ volcanoCRD <- ggplot(
 </p></details>
   
 ```{r}
-grid.arrange(volcanoRCB,volcanoCRD, volcanoRCBwrong,ncol=2)
+grid.arrange(volcanoRCB,volcanoCRD,ncol=2)
 ```
 
 ### Comparison of standard deviation 
@@ -1130,20 +1121,9 @@ grid.arrange(volcanoRCB,volcanoCRD, volcanoRCBwrong,ncol=2)
 accessions <- rownames(pe[["protein"]])[rownames(pe[["protein"]])%in%rownames(pe2[["protein"]])]
 dat <- data.frame(
 sigmaRBC = sapply(rowData(pe[["protein"]])$msqrobModels[accessions], getSigmaPosterior),
-sigmaRBCwrong = sapply(rowData(pe[["protein"]])$wrongModel[accessions], getSigmaPosterior),
 sigmaCRD <- sapply(rowData(pe2[["protein"]])$msqrobModels[accessions], getSigmaPosterior)
 )
 
- plotRBCvsWrong <- ggplot(data = dat, aes(sigmaRBC, sigmaRBCwrong)) +
-    geom_point(alpha = 0.1, shape = 20) +
-    scale_x_log10() +
-    scale_y_log10() +
-    geom_abline(intercept=0,slope=1)
-plotCRDvsWrong <- ggplot(data = dat, aes(sigmaCRD, sigmaRBCwrong)) +
-    geom_point(alpha = 0.1, shape = 20) +
-    scale_x_log10() +
-    scale_y_log10() +
-    geom_abline(intercept=0,slope=1)
 plotRBCvsCRD <- ggplot(data = dat, aes(sigmaRBC, sigmaCRD)) +
     geom_point(alpha = 0.1, shape = 20) +
     scale_x_log10() +
@@ -1153,18 +1133,10 @@ plotRBCvsCRD <- ggplot(data = dat, aes(sigmaRBC, sigmaCRD)) +
 </p></details>
 
 ```{r}
-grid.arrange(
-  plotRBCvsWrong,
-  plotCRDvsWrong,
-  plotRBCvsCRD,
-  nrow=2)
+  plotRBCvsCRD
 ```
 
 - We clearly observe that the standard deviation of the protein expression in the RCB is smaller for the majority of the proteins than that obtained with the CRD
-
-- The standard deviation of the protein expression RCB where we perform a wrong analysis without considering the blocking factor according to mouse is much larger for the marjority of the proteins than that obtained with the correct analysis. 
-
-- Indeed, when we ignore the blocking factor in the RCB design we do not remove the variability according to mouse from the analysis and the mouse effect is absorbed in the error term. The standard deviation than becomes very comparable to that observed in the completely randomised design where we could not remove the mouse effect from the analysis. 
 
 - Why are some of the standard deviations for the RCB with the correct analysis larger than than of the RCB with the incorrect analysis that ignored the mouse blocking factor?
 
