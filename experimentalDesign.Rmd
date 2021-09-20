@@ -1107,11 +1107,23 @@ volcanoCRD <- ggplot(
     ggtitle(paste0("CRD: \n", 
                 sum(rowData(pe2[["protein"]])$celltypeTreg$adjPval<0.05,na.rm=TRUE),
             " significant"))
+
+xlims <- (range(rowData(pe[["protein"]])$celltypeTreg$logFC, 
+              rowData(pe2[["protein"]])$celltypeTreg$logFC,
+              na.rm=TRUE) %>% abs %>% max) * c(-1,1)
+ylims <- range(-log10(rowData(pe[["protein"]])$celltypeTreg$pval), 
+              -log10(rowData(pe2[["protein"]])$celltypeTreg$logFC), 
+              na.rm=TRUE)
 ```
 </p></details>
   
 ```{r warning=FALSE,echo=FALSE}
-grid.arrange(volcanoRCB,volcanoCRD,nrow=2)
+volcanoRCB + 
+  xlim(xlims) + 
+  ylim(ylims) 
+volcanoCRD + 
+  xlim(xlims) + 
+  ylim(ylims)
 ```
 
 ### Comparison of standard deviation 
