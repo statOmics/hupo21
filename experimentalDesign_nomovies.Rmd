@@ -27,12 +27,6 @@ This is part of the online course [Experimental Design and Data-Analysis in Labe
 
 
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/1mvHapLmrc4"
-frameborder="0"
-style="display: block; margin: auto;"
-allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 
 <details><summary> Click to see libraries that are loaded </summary><p>
 ```{r, warning=FALSE, message=FALSE}
@@ -52,12 +46,6 @@ library(gridExtra)
 - Randomized Complete Block Designs 
 
 # Sample size 
-
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/iIkrfnVxm6Y"
-frameborder="0"
-style="display: block; margin: auto;"
-allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Statistical models 
 - Upon preprocessing and summarization we model the log2 transformed protein expression ($y_{i}$) values using a linear model 
@@ -653,11 +641,6 @@ $\rightarrow$ if number of bio-repeats increases we have a higher power!
 
 # Randomized complete block designs
 
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/m3wwCw8WS7I"
-frameborder="0"
-style="display: block; margin: auto;"
-allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 \[\sigma^2= \sigma^2_{bio}+\sigma^2_\text{lab} +\sigma^2_\text{extraction} + \sigma^2_\text{run} + \ldots\]
@@ -1079,6 +1062,7 @@ with
 1& \text{m4}\\
 0& \text{otherwise}
 \end{cases}$
+
 - Possible in msqrob2 and MSstats but not possible with Perseus!
 
 
