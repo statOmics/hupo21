@@ -17,8 +17,20 @@ bibliography: msqrob2.bib
 
 This is part of the online course [Experimental Design and Data-Analysis in Label-Free Quantitative LC/MS Proteomics - A Tutorial with msqrob2 (hupo21)](https://statomics.github.io/hupo21/)
 
+# Additional resources
+
+- [Install msqrob2 software](./software.html)
+- [Download data](https://github.com/statOmics/hupo21/archive/refs/heads/data.zip)
+- [Introduction to msqrob2gui](https://statomics.github.io/PDA21/cptac_robust_gui.html) (optional)
 
 # Heart example
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/ZZ89tCCcA7M"
+frameborder="0"
+style="display: block; margin: auto;"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 
 ![Figure 3. Heart](./figures/heart.png)
 
@@ -31,10 +43,6 @@ Particularly, they would like to compare the expression between
 - the average ventricular vs atrial proteome and 
 - if ventricular vs atrial proteome shifts differ between left and right heart region.
 
-# Additional resources
 
-- [Install msqrob2 software](./software.html)
-- [Download data](https://github.com/statOmics/hupo21/archive/refs/heads/data.zip)
-- [Introduction to msqrob2gui](https://statomics.github.io/PDA21/cptac_robust_gui.html)
 
 
